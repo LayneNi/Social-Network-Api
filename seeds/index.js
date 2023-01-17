@@ -14,7 +14,6 @@ connection.once('open', async () => {
     // Drop existing students
     await Thought.deleteMany({});
   
-  
     // Add users to the collection and await the results
     await User.collection.insertMany(userData);
   

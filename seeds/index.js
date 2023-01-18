@@ -1,5 +1,5 @@
 const connection = require("../config/connection")
-const {User, Thought} = require("../models")
+const { User, Thought } = require("../models")
 const userData = require("./userData")
 const thoughtData = require("./thoughtData")
 

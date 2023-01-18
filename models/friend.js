@@ -6,6 +6,6 @@ const friendSchema = new Schema({
 });
 
 // Initialize the friend model
-const Comment = model('friend', friendSchema);
+const Friend = model('friend', friendSchema);
 
 module.exports = Friend;

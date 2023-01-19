@@ -1,4 +1,4 @@
-const { Post, Friend } = require('../models');
+const { Post, Friend, User } = require('../models');
 
 module.exports = {
   getFriends(req, res) {
@@ -7,7 +7,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // Get a single Friend
-  getSingleComment(req, res) {
+  getSingleFriend(req, res) {
     Friend.findOne({ _id: req.params.friendId })
       .then((friend) =>
         !friend

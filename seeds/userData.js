@@ -9,5 +9,8 @@ const userData = [
     }
 ]
 
-
-module.exports = userData
+const friends = [
+    'friend1',
+    'friend2'
+]
+module.exports = userData, friends

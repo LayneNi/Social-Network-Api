@@ -24,4 +24,33 @@ module.exports = {
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(500).json(err));
   },
+  updateUser(req, res) {
+    User.findOneAndUpdate(
+      { _id: req.params.userId },
+       { $set: req.body }, 
+      { runValidators: true, new: true }
+    )
+      .then((User) =>
+        !User
+          ? res.status(404).json({ message: 'No User with this id!' })
+          : res.json(User)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
+  addFriend(req, res) {
+    User.findOneAndUpdate(
+      { _id: req.params.userId },
+      // { $addToSet: { friends: req.body.username } },
+      { $push: { friends: req.body.username } },
+      { runValidators: true, new: true }
+    )
+      .then((User) =>
+        !User
+          ? res.status(404).json({ message: 'No User with this id!' })
+          : res.json(User)
+      )
+      .catch((err) => res.status(500).json(err));
+  },
 };
+
+

@@ -1,10 +1,10 @@
 const thoughtData = [
     {   thoughtText: "I'm user one haha",
-        username: "userOne",
+        username: "anotherUser",
     },
     {
         thoughtText: "User two in da house",
-        username: "userTwo",
+        username: "otherUser",
     }
 ]
 
